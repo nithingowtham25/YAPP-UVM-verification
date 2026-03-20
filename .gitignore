@@ -1,0 +1,60 @@
+# ========================
+# Simulation / Tool Outputs
+# ========================
+*.log
+*.out
+*.jou
+*.pb
+*.key
+
+# Waveforms
+*.vcd
+*.fsdb
+*.wlf
+*.trn
+
+# Coverage
+*.ucdb
+cov/
+coverage/
+
+# ========================
+# Compile / Build Artifacts
+# ========================
+work/
+simv/
+csrc/
+INCA_libs/
+xcelium.d/
+*.daidir/
+
+# Cadence / Synopsys temp
+*.history
+*.svh.vpd
+
+# ========================
+# UVM / Debug
+# ========================
+*.dump
+*.stackdump
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Editor / IDE
+# ========================
+.vscode/
+*.swp
+*.swo
+
+# ========================
+# Lab / Training Specific
+# ========================
+uvm/.solutions/
+
+# (Windows absolute path equivalent — optional safety)
+Z:/Spring_2026/csce-714-adv-verif/yapp/uvm/.solutions/
