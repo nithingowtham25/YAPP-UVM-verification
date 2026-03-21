@@ -24,20 +24,22 @@ The YAPP router accepts packetized data on a single input interface and routes i
    source setup.bash
    ```
 
-   This configures tool paths, environment variables, and UVM settings.
+2. Navigate to the Lab 1 directory:
 
-2. Compile and run simulation:
+   ```bash
+   cd uvm/lab01_data
+   ```
+
+3. Compile and run simulation:
 
    ```bash
    xrun -f run.f
    ```
 
-   The `run.f` file specifies all source files, include directories, and simulation options.
-
 ### Notes
 
-* Ensure the correct UVM version is set before running simulations.
-* Simulation logs and outputs are generated during execution.
+* Ensure the correct UVM version is set before running simulations
+* Simulation logs and outputs are generated during execution
 
 ---
 
@@ -49,26 +51,55 @@ Each YAPP packet consists of:
 
   * 2-bit address (routing information)
   * 6-bit length (payload size)
+
 * **Payload**
 
   * Variable size (1 to 63 bytes)
+
 * **Parity**
 
   * Even parity computed over header and payload
 
 ---
 
-## 🧱 Project Structure
+## 🧪 Lab 1: Packet Modeling (Completed)
 
-```
-yapp_uvm_project/
-├── rtl/        # YAPP router DUT
-├── tb/         # UVM testbench
-├── sv/         # UVM components (agents, sequences, env)
-├── sim/        # Simulation outputs
-├── scripts/    # Run scripts / automation
-├── docs/       # Documentation
-└── README.md
+This lab focuses on building a transaction-level model of the YAPP packet using UVM.
+
+### Key Features
+
+* **Parameterized Packet Fields**
+
+  * Address and length fields forming the packet header
+  * Dynamic payload array constrained to match packet length
+  * Parity field computed automatically after randomization
+
+* **Constrained Randomization**
+
+  * Payload size tied to length field
+  * Address restricted to valid values (0–2)
+  * Controlled distribution of good vs bad parity packets
+
+* **Parity Generation**
+
+  * Implemented using bitwise XOR across header and payload
+  * Supports both valid and intentionally corrupted packets for verification
+
+* **UVM Automation**
+
+  * Used field macros for print, copy, compare, and pack operations
+  * Excluded non-functional fields (e.g., packet delay) from comparisons
+
+### Implementation Highlights
+
+* Automatic parity computation using `post_randomize()`
+* Error injection using parity control knob
+* Dynamic array constraints for realistic packet modeling
+
+### Execution Flow
+
+```text
+Create Packet → Randomize → Apply Constraints → Compute Parity → Print
 ```
 
 ---
@@ -89,7 +120,7 @@ The environment follows a modular UVM architecture:
 
 ## 🚀 Features (Planned / In Progress)
 
-* [ ] YAPP packet modeling (Lab 1)
+* [x] YAPP packet modeling (Lab 1)
 * [ ] UVM testbench hierarchy (Lab 2)
 * [ ] YAPP UVC (driver, monitor, agent) (Lab 3)
 * [ ] Factory-based configuration (Lab 4)
@@ -119,6 +150,12 @@ The environment follows a modular UVM architecture:
 
 ---
 
-## 📚 Reference
+## 📚 Reference Materials
 
-Based on Cadence UVM training labs for YAPP router verification.
+The following training documents are included in the `/docs` directory for reference:
+
+* [UVM Training Lecture Notes](docs/UVMA_1_2_6.secured.lect.pdf)
+* [UVM Lab Guide](docs/UVMA_1_2_6_rev2.lab.pdf)
+
+These documents provide detailed guidance and background for the implementation of the YAPP UVM verification environment.
+
