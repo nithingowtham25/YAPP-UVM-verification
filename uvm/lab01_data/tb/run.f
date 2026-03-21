@@ -13,7 +13,8 @@ Copyright Cadence Design Systems (c)2015
 
 // include directories
 //*** add incdir include directories here
-
+-incdir ../sv
 // compile files
 //*** add compile files here
-
+../sv/yapp_pkg.sv
+top.sv

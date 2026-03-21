@@ -1,0 +1,588 @@
+xrun(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.03-s012: Started on Mar 20, 2026 at 20:14:32 CDT
+xrun
+	-f run.f
+		-64
+		-uvmhome /opt/coe/cadence/XCELIUM/tools/methodology/UVM/CDNS-1.1d/sv
+		-incdir ../sv
+		../sv/yapp_pkg.sv
+		top.sv
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+file: ../sv/yapp_pkg.sv
+	package worklib.yapp_pkg:sv
+		errors: 0, warnings: 0
+file: top.sv
+	module worklib.top:sv
+		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 12
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		yapp_pkg
+		top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+		worklib.top:sv <0x332668e9>
+			streams:   1, words:  1945
+		worklib.yapp_pkg:sv <0x43187148>
+			streams:  24, words: 65014
+		worklib.cdns_uvm_pkg:sv <0x3ad404d3>
+			streams: 172, words: 246637
+		worklib.cdns_uvmapi:svp <0x5a48892f>
+			streams:  27, words: 28214
+		worklib.cdns_assert2uvm_pkg:sv <0x220a5ac2>
+			streams:   3, words:  1664
+		worklib.uvm_pkg:sv <0x62028337>
+			streams: 4534, words: 6761497
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                       Instances  Unique
+		Modules:                       1       1
+		Verilog packages:              5       5
+		Registers:                 12815   10066
+		Named events:                  4      12
+		Initial blocks:              252     146
+		Parallel blocks:              26      27
+		Assertions:                    2       2
+		SV Class declarations:       190     304
+		SV Class specializations:    339     339
+	Writing initial simulation snapshot: worklib.top:sv
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
+DEFINE basic $CDK_DIR/lib/basic
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
+DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
+DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+|
+xmsim: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
+Loading snapshot worklib.top:sv .................... Done
+SVSEED default: 1
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /opt/coe/cadence/XCELIUM/tools/xcelium/files/xmsimrc
+xcelium> source /opt/coe/cadence/XCELIUM/tools/methodology/UVM/CDNS-1.1d/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (22.03-s012)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+------------------------------------------------
+Name            Type           Size  Value      
+------------------------------------------------
+yapp_packet     yapp_packet    -     @2538      
+  addr          integral       2     'h0        
+  length        integral       6     'h9        
+  payload       da(integral)   9     -          
+    [0]         integral       8     'h86       
+    [1]         integral       8     'hca       
+    [2]         integral       8     'he7       
+    [3]         integral       8     'h2        
+    [4]         integral       8     'h8a       
+    [5]         integral       8     'h2        
+    [6]         integral       8     'h2a       
+    [7]         integral       8     'h71       
+    [8]         integral       8     'hca       
+  parity        integral       8     'h94       
+  parity_type   parity_type_e  1     GOOD_PARITY
+  packet_delay  integral       32    'd2        
+------------------------------------------------
+------------------------------------------------
+Name            Type           Size  Value      
+------------------------------------------------
+yapp_packet     yapp_packet    -     @2630      
+  addr          integral       2     'h2        
+  length        integral       6     'h2a       
+  payload       da(integral)   42    -          
+    [0]         integral       8     'h10       
+    [1]         integral       8     'he9       
+    [2]         integral       8     'ha8       
+    [3]         integral       8     'hf        
+    [4]         integral       8     'he9       
+    ...         ...            ...   ...        
+    [37]        integral       8     'h2e       
+    [38]        integral       8     'h86       
+    [39]        integral       8     'hdd       
+    [40]        integral       8     'hc3       
+    [41]        integral       8     'h60       
+  parity        integral       8     'hb2       
+  parity_type   parity_type_e  1     GOOD_PARITY
+  packet_delay  integral       32    'd19       
+------------------------------------------------
+------------------------------------------------
+Name            Type           Size  Value      
+------------------------------------------------
+yapp_packet     yapp_packet    -     @2639      
+  addr          integral       2     'h2        
+  length        integral       6     'h17       
+  payload       da(integral)   23    -          
+    [0]         integral       8     'h24       
+    [1]         integral       8     'hbd       
+    [2]         integral       8     'h94       
+    [3]         integral       8     'h35       
+    [4]         integral       8     'h2e       
+    ...         ...            ...   ...        
+    [18]        integral       8     'h4        
+    [19]        integral       8     'h17       
+    [20]        integral       8     'hea       
+    [21]        integral       8     'hd6       
+    [22]        integral       8     'hd        
+  parity        integral       8     'h23       
+  parity_type   parity_type_e  1     GOOD_PARITY
+  packet_delay  integral       32    'd9        
+------------------------------------------------
+------------------------------------------------
+Name            Type           Size  Value      
+------------------------------------------------
+yapp_packet     yapp_packet    -     @2546      
+  addr          integral       2     'h0        
+  length        integral       6     'h39       
+  payload       da(integral)   57    -          
+    [0]         integral       8     'h87       
+    [1]         integral       8     'he6       
+    [2]         integral       8     'he3       
+    [3]         integral       8     'h33       
+    [4]         integral       8     'hac       
+    ...         ...            ...   ...        
+    [52]        integral       8     'hae       
+    [53]        integral       8     'h4        
+    [54]        integral       8     'h6        
+    [55]        integral       8     'had       
+    [56]        integral       8     'h17       
+  parity        integral       8     'hd        
+  parity_type   parity_type_e  1     GOOD_PARITY
+  packet_delay  integral       32    'd16       
+------------------------------------------------
+------------------------------------------------
+Name            Type           Size  Value      
+------------------------------------------------
+yapp_packet     yapp_packet    -     @2625      
+  addr          integral       2     'h0        
+  length        integral       6     'h26       
+  payload       da(integral)   38    -          
+    [0]         integral       8     'h20       
+    [1]         integral       8     'hd        
+    [2]         integral       8     'hb1       
+    [3]         integral       8     'h15       
+    [4]         integral       8     'hbd       
+    ...         ...            ...   ...        
+    [33]        integral       8     'he4       
+    [34]        integral       8     'h89       
+    [35]        integral       8     'h15       
+    [36]        integral       8     'h94       
+    [37]        integral       8     'h71       
+  parity        integral       8     'h6e       
+  parity_type   parity_type_e  1     GOOD_PARITY
+  packet_delay  integral       32    'd16       
+------------------------------------------------
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s012: Exiting on Mar 20, 2026 at 20:14:36 CDT  (total: 00:00:04)
