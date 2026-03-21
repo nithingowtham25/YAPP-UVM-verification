@@ -24,10 +24,11 @@ The YAPP router accepts packetized data on a single input interface and routes i
    source setup.bash
    ```
 
-2. Navigate to the Lab 1 directory:
+2. Navigate to the desired lab directory:
 
    ```bash
-   cd uvm/lab01_data
+   cd uvm/lab01_data   # Lab 1
+   cd uvm/lab02_test   # Lab 2
    ```
 
 3. Compile and run simulation:
@@ -104,6 +105,76 @@ Create Packet → Randomize → Apply Constraints → Compute Parity → Print
 
 ---
 
+## 🧪 Lab 2: UVM Testbench Architecture (Completed)
+
+This lab introduces the foundational UVM hierarchy by building the test and testbench (environment) structure.
+
+### Key Features
+
+* **UVM Test Creation**
+
+  * Implemented `base_test` extending `uvm_test`
+  * Created derived test `test2` for extensibility
+  * Used factory registration via `uvm_component_utils`
+
+* **Testbench (Environment) Construction**
+
+  * Implemented `router_tb` extending `uvm_env`
+  * Instantiated testbench inside the test (`base_test`)
+  * Established hierarchical parent-child relationships
+
+* **UVM Phase Execution**
+
+  * Implemented `build_phase` for component construction
+  * Observed top-down execution:
+
+    * Test builds first
+    * Testbench builds next
+  * Printed topology using `uvm_top.print_topology()`
+
+### UVM Hierarchy
+
+```text
+uvm_test_top (base_test)
+ └── tb (router_tb)
+```
+
+### Execution Flow
+
+```text
+top module → run_test()
+           ↓
+       base_test.build_phase()
+           ↓
+       router_tb.build_phase()
+```
+
+### Key Observations
+
+* The **test is the top-level UVM component**
+* The **test controls creation of the testbench**
+* UVM phases execute in a **top-down hierarchical manner**
+
+---
+
+## 🧠 UVM Conceptual Analogy
+
+| UVM Component | Real-World Analogy |
+| ------------- | ------------------ |
+| Testbench     | Laboratory 🧪      |
+| Test          | Experiment         |
+| UVC           | Equipment          |
+| DUT           | Device under test  |
+
+### Interpretation
+
+* The **laboratory (testbench)** provides infrastructure
+* The **experiment (test)** controls execution
+* The **equipment (UVCs)** interact with the DUT
+* The **device under test (DUT)** is the system being verified
+
+---
+
 ## 🧪 Verification Methodology
 
 The environment follows a modular UVM architecture:
@@ -121,7 +192,7 @@ The environment follows a modular UVM architecture:
 ## 🚀 Features (Planned / In Progress)
 
 * [x] YAPP packet modeling (Lab 1)
-* [ ] UVM testbench hierarchy (Lab 2)
+* [x] UVM testbench hierarchy (Lab 2)
 * [ ] YAPP UVC (driver, monitor, agent) (Lab 3)
 * [ ] Factory-based configuration (Lab 4)
 * [ ] Sequence library and stimulus generation (Lab 5)
@@ -158,4 +229,3 @@ The following training documents are included in the `/docs` directory for refer
 * [UVM Lab Guide](docs/UVMA_1_2_6_rev2.lab.pdf)
 
 These documents provide detailed guidance and background for the implementation of the YAPP UVM verification environment.
-
