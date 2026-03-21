@@ -1,7 +1,7 @@
 # ========================
 # Simulation / Tool Outputs
 # ========================
-*.log
+# *.log
 *.out
 *.jou
 *.pb
@@ -29,7 +29,7 @@ xcelium.d/
 *.daidir/
 
 # Cadence / Synopsys temp
-*.history
+# *.history
 *.svh.vpd
 
 # ========================
