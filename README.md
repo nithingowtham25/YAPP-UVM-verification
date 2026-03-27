@@ -29,6 +29,7 @@ The YAPP router accepts packetized data on a single input interface and routes i
    ```bash
    cd uvm/lab01_data   # Lab 1
    cd uvm/lab02_test   # Lab 2
+   cd uvm/lab03_uvc    # Lab 3
    ```
 
 3. Compile and run simulation:
@@ -69,33 +70,10 @@ This lab focuses on building a transaction-level model of the YAPP packet using 
 
 ### Key Features
 
-* **Parameterized Packet Fields**
-
-  * Address and length fields forming the packet header
-  * Dynamic payload array constrained to match packet length
-  * Parity field computed automatically after randomization
-
-* **Constrained Randomization**
-
-  * Payload size tied to length field
-  * Address restricted to valid values (0–2)
-  * Controlled distribution of good vs bad parity packets
-
-* **Parity Generation**
-
-  * Implemented using bitwise XOR across header and payload
-  * Supports both valid and intentionally corrupted packets for verification
-
-* **UVM Automation**
-
-  * Used field macros for print, copy, compare, and pack operations
-  * Excluded non-functional fields (e.g., packet delay) from comparisons
-
-### Implementation Highlights
-
-* Automatic parity computation using `post_randomize()`
-* Error injection using parity control knob
-* Dynamic array constraints for realistic packet modeling
+* Parameterized packet fields and dynamic payload
+* Constrained randomization with valid address and size limits
+* Parity generation using bitwise XOR
+* UVM field automation for print, copy, and compare
 
 ### Execution Flow
 
@@ -107,30 +85,15 @@ Create Packet → Randomize → Apply Constraints → Compute Parity → Print
 
 ## 🧪 Lab 2: UVM Testbench Architecture (Completed)
 
-This lab introduces the foundational UVM hierarchy by building the test and testbench (environment) structure.
+This lab establishes the foundational UVM hierarchy by introducing the test and testbench (environment) structure.
 
 ### Key Features
 
-* **UVM Test Creation**
-
-  * Implemented `base_test` extending `uvm_test`
-  * Created derived test `test2` for extensibility
-  * Used factory registration via `uvm_component_utils`
-
-* **Testbench (Environment) Construction**
-
-  * Implemented `router_tb` extending `uvm_env`
-  * Instantiated testbench inside the test (`base_test`)
-  * Established hierarchical parent-child relationships
-
-* **UVM Phase Execution**
-
-  * Implemented `build_phase` for component construction
-  * Observed top-down execution:
-
-    * Test builds first
-    * Testbench builds next
-  * Printed topology using `uvm_top.print_topology()`
+* Implemented `base_test` and derived `test2`
+* Built `router_tb` environment
+* Established parent-child hierarchy
+* Observed top-down `build_phase` execution
+* Printed UVM topology
 
 ### UVM Hierarchy
 
@@ -139,21 +102,74 @@ uvm_test_top (base_test)
  └── tb (router_tb)
 ```
 
-### Execution Flow
+---
+
+## 🧪 Lab 3: YAPP UVC (Transmit Agent) (Completed)
+
+This lab implements a complete UVM Verification Component (UVC) for the YAPP transmit interface, including driver, sequencer, monitor, agent, and environment.
+
+### Key Features
+
+* **Driver (`yapp_tx_driver`)**
+
+  * Extends `uvm_driver #(yapp_packet)`
+  * Retrieves transactions from sequencer
+  * Sends packets to DUT (currently prints packets)
+
+* **Sequencer (`yapp_tx_sequencer`)**
+
+  * Controls transaction flow between sequence and driver
+
+* **Monitor (`yapp_tx_monitor`)**
+
+  * Observes interface activity
+  * Provides transaction-level visibility
+
+* **Agent (`yapp_tx_agent`)**
+
+  * Encapsulates driver, sequencer, and monitor
+  * Supports active/passive operation via `is_active`
+
+* **Environment (`yapp_env`)**
+
+  * Instantiates and manages the YAPP TX agent
+
+---
+
+### UVM Hierarchy (Lab 3)
 
 ```text
-top module → run_test()
-           ↓
-       base_test.build_phase()
-           ↓
-       router_tb.build_phase()
+uvm_test_top (base_test)
+ └── tb (router_tb)
+     └── yapp (yapp_env)
+         └── agent (yapp_tx_agent)
+             ├── driver
+             ├── monitor
+             └── sequencer
 ```
 
-### Key Observations
+---
 
-* The **test is the top-level UVM component**
-* The **test controls creation of the testbench**
-* UVM phases execute in a **top-down hierarchical manner**
+### Transaction Flow
+
+```text
+Sequence → Sequencer → Driver → DUT
+```
+
+---
+
+### Sequence Execution
+
+* Configured default sequence (`yapp_5_packets`) using:
+
+```systemverilog
+uvm_config_wrapper::set(this,
+  "tb.yapp.agent.sequencer.run_phase",
+  "default_sequence",
+  yapp_5_packets::get_type());
+```
+
+* Generates randomized YAPP packets during simulation
 
 ---
 
@@ -168,8 +184,8 @@ top module → run_test()
 
 ### Interpretation
 
-* The **laboratory (testbench)** provides infrastructure
 * The **experiment (test)** controls execution
+* The **laboratory (testbench)** provides infrastructure
 * The **equipment (UVCs)** interact with the DUT
 * The **device under test (DUT)** is the system being verified
 
@@ -183,8 +199,8 @@ The environment follows a modular UVM architecture:
 * Constrained-random stimulus generation
 * Driver and monitor for DUT interaction
 * Agent-based modular design
-* Scoreboard for functional checking
 * TLM-based communication between components
+* Scoreboard for functional checking
 * Register modeling using UVM RAL
 
 ---
@@ -193,7 +209,7 @@ The environment follows a modular UVM architecture:
 
 * [x] YAPP packet modeling (Lab 1)
 * [x] UVM testbench hierarchy (Lab 2)
-* [ ] YAPP UVC (driver, monitor, agent) (Lab 3)
+* [x] YAPP UVC (driver, monitor, agent) (Lab 3)
 * [ ] Factory-based configuration (Lab 4)
 * [ ] Sequence library and stimulus generation (Lab 5)
 * [ ] Virtual interface integration (Lab 6)
