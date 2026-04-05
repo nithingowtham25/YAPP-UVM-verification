@@ -173,6 +173,25 @@ uvm_config_wrapper::set(this,
 
 ---
 
+## 🧪 Lab 4: Factory and Configuration (Completed)
+
+This lab introduces dynamic control of testbench behavior using the UVM factory and configuration database.
+
+### Key Features
+
+* Implemented **factory override** to replace `yapp_packet` with `short_yapp_packet`
+* Used **config_db** to control agent behavior (`UVM_ACTIVE` / `UVM_PASSIVE`)
+* Configured **default sequence execution** using `uvm_config_wrapper`
+* Demonstrated test-specific behavior without modifying base components
+
+### Key Concepts
+
+* Factory controls **what gets created**
+* Config DB controls **how components behave**
+* Test-level configuration enables flexible and reusable verification
+
+---
+
 ## 🧠 UVM Conceptual Analogy
 
 | UVM Component | Real-World Analogy |
@@ -210,7 +229,7 @@ The environment follows a modular UVM architecture:
 * [x] YAPP packet modeling (Lab 1)
 * [x] UVM testbench hierarchy (Lab 2)
 * [x] YAPP UVC (driver, monitor, agent) (Lab 3)
-* [ ] Factory-based configuration (Lab 4)
+* [x] Factory-based configuration (Lab 4)
 * [ ] Sequence library and stimulus generation (Lab 5)
 * [ ] Virtual interface integration (Lab 6)
 * [ ] Multi-UVC system integration (Lab 7)

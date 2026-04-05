@@ -19,7 +19,7 @@ class yapp_tx_driver extends uvm_driver #(yapp_packet);
 
 	// Optional - Start of Simulation phase
 	function void start_of_simulation_phase(uvm_phase phase);
-		`uvm_info("LAB3", {"Start of Simulation for ", get_full_name()}, UVM_HIGH)
+		`uvm_info("LAB4", {"Start of Simulation for ", get_full_name()}, UVM_HIGH)
 	endfunction : start_of_simulation_phase
 
 	task run_phase (uvm_phase phase);

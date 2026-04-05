@@ -77,3 +77,21 @@ class yapp_packet extends uvm_sequence_item;
 	endfunction : post_randomize
 
 endclass: yapp_packet
+
+
+/* Short yapp packet class */
+class short_yapp_packet extends yapp_packet;
+
+	// Component macro
+	`uvm_object_utils(short_yapp_packet)
+
+	// Constructor
+	function new (string name = "short_yapp_packet");
+		super.new(name);
+	endfunction : new
+
+	// Constraints specific to short yapp packets
+	constraint pkt_len { length < 15; }
+	constraint exclude_addr { addr != 2'b10; }
+
+endclass : short_yapp_packet
