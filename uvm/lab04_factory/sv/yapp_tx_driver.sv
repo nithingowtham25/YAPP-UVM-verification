@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------
 File name     : yapp_tx_driver.sv
-Description   : lab03_uvc YAPP driver
+Description   : lab04_uvc YAPP driver
 Notes         : From the Cadence "SystemVerilog Advanced Verification with UVM" training
 Developer     : Nithin Gowtham Saravanan
 -----------------------------------------------------------------*/
@@ -32,7 +32,7 @@ class yapp_tx_driver extends uvm_driver #(yapp_packet);
 
 	// Task to drive the DUT - Just print the UVM info
 	task send_to_dut(yapp_packet pkt);
-		`uvm_info("LAB3", $sformatf("Packet is \n%s", pkt.sprint()), UVM_LOW)	
+		`uvm_info("LAB4", $sformatf("Packet is \n%s", pkt.sprint()), UVM_LOW)	
 		/* Note: sprint()creates the print string, but does not write it to the output */
 
 		#10;	// Intentional delay

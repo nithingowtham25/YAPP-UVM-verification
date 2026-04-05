@@ -29,12 +29,12 @@ class yapp_tx_agent extends uvm_agent;
       super.build_phase(phase);
 
       // monitor is always constructed
-      monitor = new("monitor", this);
+      monitor = yapp_tx_monitor::type_id::create("monitor", this);
 
       // Sequencer and driver are constructed only when its ACTIVE agent
       if(is_active == UVM_ACTIVE) begin
-         sequencer = new("sequencer", this);
-         driver = new("driver", this);
+         sequencer = yapp_tx_sequencer::type_id::create("sequencer", this);
+         driver = yapp_tx_driver::type_id::create("driver", this);
       end
    endfunction : build_phase
 
@@ -47,7 +47,7 @@ class yapp_tx_agent extends uvm_agent;
 
 	// Optional - Start of Simulation phase
 	function void start_of_simulation_phase(uvm_phase phase);
-		`uvm_info("LAB3", {"Start of Simulation for ", get_full_name()}, UVM_HIGH)
+		`uvm_info("LAB4", {"Start of Simulation for ", get_full_name()}, UVM_HIGH)
 	endfunction : start_of_simulation_phase
 
 endclass : yapp_tx_agent

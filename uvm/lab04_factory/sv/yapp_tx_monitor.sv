@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------
 File name     : yapp_tx_monitor.sv
-Description   : lab03_uvc YAPP Monitor
+Description   : lab04_uvc YAPP Monitor
 Notes         : From the Cadence "SystemVerilog Advanced Verification with UVM" training
 Developer     : Nithin Gowtham Saravanan
 -----------------------------------------------------------------*/
@@ -17,11 +17,11 @@ class yapp_tx_monitor extends uvm_monitor;
 
 	// Optional - Start of simulation phase
 	function void start_of_simulation_phase(uvm_phase phase);
-		`uvm_info("LAB3", {"Start of Simulation for ", get_full_name()}, UVM_HIGH)
+		`uvm_info("LAB4", {"Start of Simulation for ", get_full_name()}, UVM_HIGH)
 	endfunction : start_of_simulation_phase
 
   task run_phase (uvm_phase phase);
-    `uvm_info("LAB3", "Inside run_phase of MONITOR", UVM_LOW)
+    `uvm_info("LAB4", "Inside run_phase of MONITOR", UVM_LOW)
   endtask : run_phase
 
 endclass : yapp_tx_monitor

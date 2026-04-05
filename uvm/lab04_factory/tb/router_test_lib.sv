@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------
 File name     : router_test_lib.sv
-Description   : lab02_test Test creation
+Description   : lab04_test Test creation
 Notes         : From the Cadence "SystemVerilog Advanced Verification with UVM" training
 Developer     : Nithin Gowtham Saravanan
 -----------------------------------------------------------------*/
@@ -22,8 +22,8 @@ class base_test extends uvm_test;
         uvm_config_wrapper::set(this, "tb.yapp.tx_agent.sequencer.run_phase",
                                       "default_sequence",
                                       yapp_5_packets::get_type());
-        tb = new("tb", this);
-        `uvm_info("LAB3", "Executing test build phase...", UVM_HIGH)
+        tb = router_tb::type_id::create("tb", this);
+        `uvm_info("LAB4", "Executing test build phase...", UVM_HIGH)
     endfunction : build_phase
 
     // End of elaboration

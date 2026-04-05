@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------
 File name     : yapp_packet.sv
-Description   : lab01_data YAPP UVC packet template file
+Description   : lab04_data YAPP UVC packet template file
 Notes         : From the Cadence "SystemVerilog Advanced Verification with UVM" training
 Developer     : Nithin Gowtham Saravanan
 -----------------------------------------------------------------*/
