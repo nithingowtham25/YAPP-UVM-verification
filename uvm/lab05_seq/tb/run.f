@@ -20,7 +20,8 @@ top.sv
 
 // simulation paramters
 //+UVM_TESTNAME=base_test
-// +UVM_TESTNAME=short_packet_test
-+UVM_TESTNAME=set_config_test
+//+UVM_TESTNAME=short_packet_test
+//+UVM_TESTNAME=set_config_test
 //+UVM_TESTNAME=test2
++UVM_TESTNAME=exhaustive_seq_test
 +UVM_VERBOSITY=UVM_HIGH

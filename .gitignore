@@ -55,6 +55,8 @@ Thumbs.db
 # Lab / Training Specific
 # ========================
 uvm/.solutions/
+.chipagents
+*.simvision
 
 # (Windows absolute path equivalent — optional safety)
 Z:/Spring_2026/csce-714-adv-verif/yapp/uvm/.solutions/

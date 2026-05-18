@@ -92,6 +92,10 @@ class short_yapp_packet extends yapp_packet;
 
 	// Constraints specific to short yapp packets
 	constraint pkt_len { length < 15; }
-	constraint exclude_addr { addr != 2'b10; }
+	
+	/* Commenting this out to fix the randomization error at lab-5
+	   Needed this fix for future labs as well.
+	   Here we now allow short packets to every address */
+	//constraint exclude_addr { addr != 2'b10; }
 
 endclass : short_yapp_packet

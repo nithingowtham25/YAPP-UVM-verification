@@ -105,3 +105,56 @@ class set_config_test extends base_test;
     endfunction : build_phase
 
 endclass : set_config_test
+
+
+/*******************************************************************************
+************* LAB 5 - RUNNING A TEST USING A NEW SEQUENCE **********************
+*******************************************************************************/
+class incr_payload_test extends base_test;
+    // Component macro
+    `uvm_component_utils(incr_payload_test)
+
+    // Constructor
+    function new (string name, uvm_component parent=null);
+        super.new(name, parent);
+    endfunction : new
+
+    function void build_phase (uvm_phase phase);
+        // Whenever someone asks for yapp_packet → give short_yapp_packet instead
+        yapp_packet::type_id::set_type_override(short_yapp_packet::get_type());
+        
+        // When run_phase starts, run this sequence on this sequencer
+        uvm_config_wrapper::set(this, "tb.yapp.tx_agent.sequencer.run_phase",
+                                "default_sequence",
+                                yapp_incr_payload_seq::get_type());
+
+        super.build_phase(phase);
+    endfunction : build_phase
+
+endclass : incr_payload_test
+
+/*******************************************************************************
+************* LAB 5 - Test to run all the created sequences ********************
+*******************************************************************************/
+class exhaustive_seq_test extends base_test;
+    // Component macro
+    `uvm_component_utils(exhaustive_seq_test)
+
+    // Constructor
+    function new (string name, uvm_component parent=null);
+        super.new(name, parent);
+    endfunction : new
+
+    function void build_phase (uvm_phase phase);
+        // Whenever someone asks for yapp_packet → give short_yapp_packet instead
+        yapp_packet::type_id::set_type_override(short_yapp_packet::get_type());
+        
+        // When run_phase starts, run this sequence on this sequencer
+        uvm_config_wrapper::set(this, "tb.yapp.tx_agent.sequencer.run_phase",
+                                "default_sequence",
+                                yapp_exhaustive_seq::get_type());
+
+        super.build_phase(phase);
+    endfunction : build_phase
+
+endclass : exhaustive_seq_test

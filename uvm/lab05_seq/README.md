@@ -1,71 +1,68 @@
-# Lab 4: Factory Overrides and Configuration Database
+# Lab 5: UVM Sequences and Stimulus Generation
 
 ## 📌 Overview
 
-This lab introduces two of the most powerful and fundamental concepts in UVM: **factory overrides** and the **configuration database (config_db)**. These mechanisms enable dynamic control over testbench behavior without modifying existing code.
+This lab introduces sequence-based stimulus generation in UVM. Multiple reusable sequences were implemented to generate constrained-random YAPP packet traffic and exercise the verification environment using different packet scenarios.
+
+The lab also demonstrates automatic sequence execution using sequencer configuration and highlights the importance of runtime randomization handling during exhaustive testing.
 
 ---
 
 ## 🎯 Objectives
 
-* Understand and apply factory overrides
-* Use the UVM configuration database to control component behavior
-* Dynamically modify testbench functionality through test-level control
-* Learn best practices for scalable and reusable verification environments
+* Create reusable UVM sequences
+* Generate constrained-random packet stimulus
+* Configure automatic sequence execution
+* Understand runtime randomization failures
+* Apply exhaustive packet testing scenarios
 
 ---
 
 ## 🧱 Concepts Implemented
 
-### 1️⃣ Factory Override
+### 1️⃣ UVM Sequence Creation
 
-Factory override allows replacing a base class with a derived class **at runtime**, without modifying the original code.
+Implemented reusable sequences extending `uvm_sequence #(yapp_packet)`.
 
 #### Implementation
 
-```systemverilog id="3u6jzx"
-set_type_override_by_type(
-  yapp_packet::get_type(),
-  short_yapp_packet::get_type()
-);
+```systemverilog id="1ndu6u"
+class yapp_5_packets extends uvm_sequence #(yapp_packet);
 ```
 
 #### Behavior
 
-* All `yapp_packet` creations are replaced with `short_yapp_packet`
-* Sequences remain unchanged
-* Test behavior is modified dynamically
+* Generates transaction-level packet stimulus
+* Enables reusable traffic scenarios
+* Integrates with the YAPP sequencer
 
 ---
 
-### 2️⃣ Configuration Database (config_db)
+### 2️⃣ Sequence Item Generation
 
-The configuration database is used to pass configuration settings from higher-level components (like tests) to lower-level components (like agents).
+Used UVM sequence macros for packet creation and execution.
 
-#### Example: Setting Agent Mode
+#### Implementation
 
-```systemverilog id="1g3t6d"
-uvm_config_int::set(this, "tb.yapp.agent", "is_active", UVM_PASSIVE);
+```systemverilog id="pm4m0p"
+`uvm_create(req)
+`uvm_send(req)
 ```
 
 #### Behavior
 
-* Sets the agent to **PASSIVE mode**
-* Disables:
-
-  * Driver
-  * Sequencer
-* Keeps:
-
-  * Monitor active
+* Creates packet transactions using the factory
+* Sends randomized packets through the sequencer-driver path
 
 ---
 
 ### 3️⃣ Default Sequence Configuration
 
-Used to automatically start a sequence during the `run_phase`.
+Configured sequences to start automatically during `run_phase`.
 
-```systemverilog id="j4zq8y"
+#### Implementation
+
+```systemverilog id="n4p7el"
 uvm_config_wrapper::set(
   this,
   "tb.yapp.agent.sequencer.run_phase",
@@ -76,76 +73,122 @@ uvm_config_wrapper::set(
 
 #### Behavior
 
-* Automatically runs `yapp_5_packets` sequence
-* No explicit `start()` call required
+* Automatically starts the configured sequence
+* Eliminates manual `start()` calls inside tests
+
+---
+
+### 4️⃣ Constrained Random Packet Generation
+
+Generated randomized packets with:
+
+* Variable payload sizes
+* Valid destination addresses
+* Good and bad parity combinations
+* Incrementing payload patterns
+
+---
+
+### 5️⃣ Exhaustive Stimulus Testing
+
+Implemented exhaustive packet generation across multiple packet combinations.
+
+#### Behavior
+
+* Exercises multiple packet scenarios
+* Demonstrates runtime randomization checking
+* Validates sequence-level packet generation behavior
 
 ---
 
 ## 🔄 Execution Flow
 
-```text id="p9xk3d"
+```text id="xz0y7f"
 Test starts
    ↓
-Factory override applied
+Default sequence configured
    ↓
-Config DB settings applied
+Sequence starts on sequencer
    ↓
-Components built
+Packet randomized
    ↓
-Sequence starts automatically
+Driver sends transaction
    ↓
-Packets generated and processed
+Monitor observes packet activity
 ```
 
 ---
 
-## 🧪 Tests Implemented
+## 🧪 Sequences Implemented
 
-### ✅ `short_packet_test`
+### ✅ `yapp_5_packets`
 
-* Uses factory override
-* Replaces `yapp_packet` with `short_yapp_packet`
-* Generates shorter packets dynamically
+* Generates 5 randomized YAPP packets
+* Used as the default sequence in multiple tests
 
 ---
 
-### ✅ `set_config_test`
+### ✅ `yapp_012_seq`
 
-* Uses config_db
-* Sets agent to `UVM_PASSIVE`
-* Only monitor is active (no stimulus generation)
+* Generates packets targeting addresses 0, 1, and 2
+* Exercises valid routing paths through the DUT
+
+---
+
+### ✅ `yapp_1_seq`
+
+* Generates packets directed only to address 1
+* Used for focused single-destination testing
+
+---
+
+### ✅ `yapp_incr_payload_seq`
+
+* Generates packets with incrementing payload data
+* Exercises payload handling scenarios
+
+---
+
+### ✅ `yapp_exhaustive_seq`
+
+* Exercises multiple packet combinations exhaustively
+* Initial runtime randomization failures were observed during simulation
+* The issue occurred due to address constraint conflicts while generating short packets
+* The issue was resolved by removing the address constraint in `short_yapp_packet`
+* This allowed the exhaustive sequence to complete without randomization violations
 
 ---
 
 ## 🧠 Key Concepts Learned
 
-* Factory enables **dynamic type substitution**
-* Config DB enables **hierarchical configuration**
-* Tests control behavior without modifying components
-* Separation of **structure vs behavior**
+* Sequences generate transaction-level stimulus
+* Sequencers control sequence execution
+* Factory-created packets integrate seamlessly with sequences
+* Automatic sequence execution improves test scalability
+* Runtime randomization failures help identify constraint conflicts
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-* Factory override must be set **before `super.build_phase()`**
-* Incorrect component path in config_db leads to no effect
-* Every `set()` should ideally have a corresponding `get()`
-* Typos in field names (e.g., `"recording_detail"`) cause silent issues
+* Constraint conflicts can cause runtime randomization failures
+* Randomization failures occur during simulation, not compilation
+* Incorrect sequence constraints can block exhaustive testing scenarios
+* Factory-created packet types must remain compatible with sequence behavior
 
 ---
 
 ## ▶️ How to Run
 
-```bash id="z2vql1"
+```bash id="a9ny4f"
 source setup.bash
-cd uvm/lab04_factory
+cd uvm/lab05_sequences
 xrun -f run.f
 ```
 
 ### Run specific tests:
 
-```bash id="3b3x7g"
+```bash id="u7j6w7"
 +UVM_TESTNAME=short_packet_test
 +UVM_TESTNAME=set_config_test
 ```
@@ -154,41 +197,39 @@ xrun -f run.f
 
 ## 📊 Expected Results
 
-* **short_packet_test**
-
-  * Packets generated with modified constraints
-  * Same sequence, different behavior
-
-* **set_config_test**
-
-  * No packets driven
-  * Monitor activity only
-  * Agent operates in passive mode
+* Multiple packet sequences generated successfully
+* Automatic sequence execution through the sequencer
+* Randomized packet traffic observed in simulation
+* Exhaustive sequence runs without runtime constraint violations after fixes
 
 ---
 
 ## 🧠 Conceptual Understanding
 
-| Concept   | Role                               |
-| --------- | ---------------------------------- |
-| Factory   | Controls **what gets created**     |
-| Config DB | Controls **how components behave** |
+| Concept     | Role                                        |
+| ----------- | ------------------------------------------- |
+| Sequence    | Generates transaction-level stimulus        |
+| Sequencer   | Controls sequence execution flow            |
+| Driver      | Converts transactions into DUT activity     |
+| Constraints | Control legal packet randomization behavior |
 
 ---
 
 ## 🔍 Implementation Highlights
 
-* Non-intrusive behavior modification using factory
-* Hierarchical configuration using config_db
-* Clean separation between test logic and component implementation
-* Improved reusability and scalability of UVM environment
+* Reusable sequence architecture
+* Constrained-random packet generation
+* Automatic sequence execution using `default_sequence`
+* Exhaustive packet stimulus testing
+* Runtime constraint validation during simulation
 
 ---
 
 ## ✅ Outcome
 
-* Successfully implemented factory overrides and config_db usage
-* Demonstrated dynamic behavior control across multiple tests
-* Established foundation for advanced UVM features in future labs
+* Successfully implemented reusable UVM sequences
+* Integrated sequence execution into the YAPP verification environment
+* Applied constrained-random stimulus generation techniques
+* Resolved runtime randomization conflicts during exhaustive testing
 
 ---

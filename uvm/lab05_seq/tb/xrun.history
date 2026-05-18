@@ -17,3 +17,10 @@ s16(05Apr2026:15:57:04):  xrun -f run.f
 s17(05Apr2026:16:28:31):  xrun -f run.f 
 s18(05Apr2026:16:31:11):  xrun -f run.f 
 s19(05Apr2026:16:40:18):  xrun -f run.f 
+s20(17May2026:22:03:10):  xrun -f run.f +UVM_TESTNAME=exhaustive_seq_test 
+s21(17May2026:22:04:58):  xrun -f run.f +UVM_TESTNAME=exhaustive_seq_test 
+s22(17May2026:22:05:32):  xrun -f run.f +UVM_TESTNAME=exhaustive_seq_test 
+s23(18May2026:00:34:58):  xrun -f run.f +UVM_TESTNAME=exhaustive_seq_test 
+s24(18May2026:00:39:14):  xrun -f run.f 
+s25(18May2026:00:40:57):  xrun -f run.f -gui -access rwc 
+s26(18May2026:01:03:39):  xrun -f run.f 

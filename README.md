@@ -27,9 +27,11 @@ The YAPP router accepts packetized data on a single input interface and routes i
 2. Navigate to the desired lab directory:
 
    ```bash
-   cd uvm/lab01_data   # Lab 1
-   cd uvm/lab02_test   # Lab 2
-   cd uvm/lab03_uvc    # Lab 3
+   cd uvm/lab01_data        # Lab 1
+   cd uvm/lab02_test        # Lab 2
+   cd uvm/lab03_uvc         # Lab 3
+   cd uvm/lab04_factory     # Lab 4
+   cd uvm/lab05_seq         # Lab 5
    ```
 
 3. Compile and run simulation:
@@ -192,6 +194,41 @@ This lab introduces dynamic control of testbench behavior using the UVM factory 
 
 ---
 
+## 🧪 Lab 5: Sequences and Stimulus Generation (Completed)
+
+This lab focuses on reusable UVM sequence creation and constrained-random packet stimulus generation.
+
+### Key Features
+
+* Implemented reusable packet sequences
+* Configured automatic sequence execution using `default_sequence`
+* Generated constrained-random packet traffic
+* Exercised multiple routing and payload scenarios
+* Performed exhaustive packet generation testing
+
+### Sequences Implemented
+
+* `yapp_5_packets`
+* `yapp_012_seq`
+* `yapp_1_seq`
+* `yapp_incr_payload_seq`
+* `yapp_exhaustive_seq`
+
+### Randomization Issue and Fix
+
+During exhaustive testing, runtime randomization failures were observed due to address constraint conflicts while generating short packets.
+
+The issue was resolved by removing the address constraint inside `short_yapp_packet`, allowing exhaustive packet generation to complete successfully without runtime constraint violations.
+
+### Key Concepts
+
+* Sequences generate transaction-level stimulus
+* Sequencers control sequence execution flow
+* Runtime randomization failures help identify constraint conflicts
+* Automatic sequence execution improves test scalability
+
+---
+
 ## 🧠 UVM Conceptual Analogy
 
 | UVM Component | Real-World Analogy |
@@ -230,7 +267,7 @@ The environment follows a modular UVM architecture:
 * [x] UVM testbench hierarchy (Lab 2)
 * [x] YAPP UVC (driver, monitor, agent) (Lab 3)
 * [x] Factory-based configuration (Lab 4)
-* [ ] Sequence library and stimulus generation (Lab 5)
+* [x] Sequence library and stimulus generation (Lab 5)
 * [ ] Virtual interface integration (Lab 6)
 * [ ] Multi-UVC system integration (Lab 7)
 * [ ] Virtual sequences (Lab 8)
