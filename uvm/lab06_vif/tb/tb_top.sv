@@ -1,11 +1,11 @@
 /*-----------------------------------------------------------------
-File name     : top.sv
-Description   : lab02_test top module template file
+File name     : tb_top.sv
+Description   : lab02_test tb_top module template file
 Notes         : From the Cadence "SystemVerilog Advanced Verification with UVM" training
 Developer     : Nithin Gowtham Saravanan
 -----------------------------------------------------------------*/
 
-module top;
+module tb_top;
 
 	import uvm_pkg::*;              // import the UVM library
 	`include "uvm_macros.svh"       // include the UVM macros
@@ -14,7 +14,9 @@ module top;
 	`include "router_test_lib.sv"   // include the router base test
 
 	initial begin
+		// To set the YAPP ifc instance into the config database
+		yapp_vif_config::set(null,"*.tb.yapp.tx_agent.*","vif", hw_top.in0);
 		run_test();	// To start the test
 	end
 
-endmodule : top
+endmodule : tb_top

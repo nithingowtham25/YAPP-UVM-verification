@@ -40,6 +40,12 @@ class base_test extends uvm_test;
 		`uvm_info("LAB4", {"Start of Simulation for ", get_full_name()}, UVM_HIGH)
 	endfunction : start_of_simulation_phase
 
+    // Set a drain time for objection mechanism
+    task run_phase(uvm_phase phase);
+        uvm_objection obj = phase.get_objection();
+        obj.set_drain_time(this, 200ns);
+    endtask : run_phase
+
     // Check phase to debug configuration errors
     function void check_phase (uvm_phase phase);
         check_config_usage();   // reports any unmatched settings
@@ -158,3 +164,30 @@ class exhaustive_seq_test extends base_test;
     endfunction : build_phase
 
 endclass : exhaustive_seq_test
+
+
+/*******************************************************************************
+************* LAB 6 - Testing DUT with short yapp 012 seq **********************
+*******************************************************************************/
+class short_yapp_012_seq extends base_test;
+    // Component macro
+    `uvm_component_utils(short_yapp_012_seq)
+
+    // Constructor
+    function new (string name, uvm_component parent=null);
+        super.new(name, parent);
+    endfunction : new
+
+    function void build_phase (uvm_phase phase);
+        // Whenever someone asks for yapp_packet → give short_yapp_packet instead
+        yapp_packet::type_id::set_type_override(short_yapp_packet::get_type());
+        
+        // When run_phase starts, run this sequence on this sequencer
+        uvm_config_wrapper::set(this, "tb.yapp.tx_agent.sequencer.run_phase",
+                                "default_sequence",
+                                yapp_012_seq::get_type());
+
+        super.build_phase(phase);
+    endfunction : build_phase
+
+endclass : short_yapp_012_seq

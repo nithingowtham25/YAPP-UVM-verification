@@ -15,13 +15,28 @@ Copyright Cadence Design Systems (c)2015
 -incdir ../sv
 
 // compile files
+// UVC package
 ../sv/yapp_pkg.sv
-top.sv
+
+// UVC interfaces
+../sv/yapp_if.sv 
+
+// clock generator module
+clkgen.sv
+// top module for UVM test environment
+tb_top.sv
+// accelerated top module for interface instance
+hw_top.sv
 
 // simulation paramters
-//+UVM_TESTNAME=base_test
-//+UVM_TESTNAME=short_packet_test
-//+UVM_TESTNAME=set_config_test
-//+UVM_TESTNAME=test2
-+UVM_TESTNAME=exhaustive_seq_test
-+UVM_VERBOSITY=UVM_HIGH
+// +UVM_TESTNAME=base_test
+// +UVM_TESTNAME=short_packet_test
+// +UVM_TESTNAME=set_config_test
+// +UVM_TESTNAME=test2
+// +UVM_TESTNAME=exhaustive_seq_test
++UVM_TESTNAME=short_yapp_012_seq
+
+// +UVM_VERBOSITY=UVM_HIGH
+
+// default timescale
+-timescale 1ns/1ns

@@ -9,6 +9,10 @@ package yapp_pkg;
 
     import uvm_pkg::*;          // import UVM library
     `include "uvm_macros.svh"   // include UVM macros
+
+    // Updating YAPP interface in the configuration database
+    typedef uvm_config_db#(virtual yapp_if) yapp_vif_config;
+
     `include "yapp_packet.sv"   // include yapp packet definitions
 
     // Adding UVM components to the YAPP package
