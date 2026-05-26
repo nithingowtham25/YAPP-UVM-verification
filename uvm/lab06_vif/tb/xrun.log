@@ -1,5 +1,5 @@
 xrun(64): 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.03-s012: Started on May 25, 2026 at 22:10:39 CDT
+TOOL:	xrun(64)	22.03-s012: Started on May 25, 2026 at 22:25:27 CDT
 xrun
 	-f run.f
 		-64
@@ -9,9 +9,10 @@ xrun
 		../sv/yapp_if.sv
 		clkgen.sv
 		tb_top.sv
-		hw_top.sv
+		hw_top_dut.sv
 		+UVM_TESTNAME=short_yapp_012_seq
 		-timescale 1ns/1ns
+		../../router_rtl/yapp_router.sv
 SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
 |
 xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
@@ -156,43 +157,6 @@ xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid envi
 DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
 |
 xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
-SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
-DEFINE basic $CDK_DIR/lib/basic
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
-DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
-DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
-|
-xrun: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
-Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /opt/coe/cadence/XCELIUM/tools/methodology/UVM/CDNS-1.1d/sv
 SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
 |
 xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
@@ -229,45 +193,6 @@ xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid en
 DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
 |
 xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
-SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,3): cds.lib Invalid environment variable ''.
-DEFINE basic $CDK_DIR/lib/basic
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,4): cds.lib Invalid environment variable ''.
-DEFINE NCSU_Analog_Parts $CDK_DIR/lib/NCSU_Analog_Parts
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,5): cds.lib Invalid environment variable ''.
-DEFINE NCSU_Digital_Parts $CDK_DIR/lib/NCSU_Digital_Parts
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,6): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_ami06 $CDK_DIR/lib/NCSU_TechLib_ami06
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,8): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_ami16 $CDK_DIR/lib/NCSU_TechLib_ami16
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,9): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_hp06 $CDK_DIR/lib/NCSU_TechLib_hp06
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,10): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc02 $CDK_DIR/lib/NCSU_TechLib_tsmc02
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,11): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc02d $CDK_DIR/lib/NCSU_TechLib_tsmc02d
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,12): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc03 $CDK_DIR/lib/NCSU_TechLib_tsmc03
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,13): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc03d $CDK_DIR/lib/NCSU_TechLib_tsmc03d
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid environment variable ''.
-DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
-|
-xmvlog: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
-file: ../sv/yapp_pkg.sv
-	package worklib.yapp_pkg:sv
-		errors: 0, warnings: 0
 file: ../sv/yapp_if.sv
 	interface worklib.yapp_if:sv
 		errors: 0, warnings: 0
@@ -277,8 +202,17 @@ file: clkgen.sv
 file: tb_top.sv
 	module worklib.tb_top:sv
 		errors: 0, warnings: 0
-file: hw_top.sv
+file: hw_top_dut.sv
 	module worklib.hw_top:sv
+		errors: 0, warnings: 0
+file: ../../router_rtl/yapp_router.sv
+	module worklib.host_ctl:sv
+		errors: 0, warnings: 0
+	module worklib.fifo:sv
+		errors: 0, warnings: 0
+	module worklib.port_fsm:sv
+		errors: 0, warnings: 0
+	module worklib.yapp_router:sv
 		errors: 0, warnings: 0
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 12
@@ -393,6 +327,7 @@ xmelab: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid en
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
+		$unit_0x661ecdbd
 		uvm_pkg
 		cdns_uvmapi
 		cdns_assert2uvm_pkg
@@ -439,38 +374,40 @@ xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,14): cds.lib Invalid
 DEFINE NCSU_TechLib_tsmc04_4M2P $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
 |
 xmvlog_cg: *W,DLCVAR (/home/grads/n/nithingowtham25/cds.lib,15): cds.lib Invalid environment variable ''.
-		worklib.clkgen:sv <0x4daaf25f>
+		worklib.fifo:sv <0x7a9417b5>
+			streams:   5, words:  2602
+		worklib.port_fsm:sv <0x49a26655>
+			streams:  32, words: 20324
+		worklib.host_ctl:sv <0x4fb92895>
+			streams:  20, words: 14598
+		worklib.yapp_router:sv <0x2b735361>
+			streams:  15, words:  3190
+		worklib.clkgen:sv <0x0ecbbc9e>
 			streams:   2, words:   877
-		worklib.tb_top:sv <0x44ebe858>
+		worklib.tb_top:sv <0x45ad7110>
 			streams: 166, words: 109021
-		worklib.hw_top:sv <0x6f86cd8d>
-			streams:   7, words:  2948
-		worklib.yapp_if:sv <0x2c02adb0>
-			streams: 692, words: 814582
-		worklib.cdns_uvm_pkg:sv <0x05a5fadf>
-			streams: 172, words: 246637
-		worklib.cdns_uvmapi:svp <0x4ce36cd3>
-			streams:  27, words: 28214
-		worklib.cdns_assert2uvm_pkg:sv <0x238b1bcc>
-			streams:   3, words:  1664
-		worklib.uvm_pkg:sv <0x70998d92>
-			streams: 4538, words: 6768243
+		worklib.hw_top:sv <0x57f31bde>
+			streams:   9, words:  3171
+		worklib.yapp_if:sv <0x484491a9>
+			streams: 692, words: 816541
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                       Instances  Unique
-		Modules:                       3       3
+		Modules:                       9       7
 		Interfaces:                    1       1
 		Verilog packages:              5       5
-		Registers:                 14449   10479
-		Scalar wires:                  6       -
-		Vectored wires:                1       -
+		Registers:                 14535   10553
+		Scalar wires:                 43       -
+		Vectored wires:               24       -
 		Named events:                  5      13
-		Always blocks:                 6       6
+		Always blocks:                18      14
 		Initial blocks:              328     172
 		Parallel blocks:              29      30
-		Pseudo assignments:            4       4
+		Cont. assignments:            16      41
+		Pseudo assignments:           10      10
 		Assertions:                    3       3
+		Compilation units:             1       1
 		SV Class declarations:       212     326
 		SV Class specializations:    408     408
 		Simulation timescale:      100ps
@@ -542,19 +479,19 @@ UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 ----------------------------------------------------------------------
 Name                         Type                     Size  Value     
 ----------------------------------------------------------------------
-uvm_test_top                 short_yapp_012_seq       -     @2642     
-  tb                         router_tb                -     @2727     
-    yapp                     yapp_env                 -     @2759     
-      tx_agent               yapp_tx_agent            -     @2788     
-        driver               yapp_tx_driver           -     @3493     
-          rsp_port           uvm_analysis_port        -     @3592     
-          seq_item_port      uvm_seq_item_pull_port   -     @3543     
+uvm_test_top                 short_yapp_012_seq       -     @2643     
+  tb                         router_tb                -     @2728     
+    yapp                     yapp_env                 -     @2760     
+      tx_agent               yapp_tx_agent            -     @2789     
+        driver               yapp_tx_driver           -     @3494     
+          rsp_port           uvm_analysis_port        -     @3593     
+          seq_item_port      uvm_seq_item_pull_port   -     @3544     
           num_sent           integral                 32    'h0       
-        monitor              yapp_tx_monitor          -     @2824     
+        monitor              yapp_tx_monitor          -     @2825     
           num_pkt_col        integral                 32    'h0       
-        sequencer            yapp_tx_sequencer        -     @2854     
-          rsp_export         uvm_analysis_export      -     @2912     
-          seq_item_export    uvm_seq_item_pull_imp    -     @3462     
+        sequencer            yapp_tx_sequencer        -     @2855     
+          rsp_export         uvm_analysis_export      -     @2913     
+          seq_item_export    uvm_seq_item_pull_imp    -     @3463     
           arbitration_queue  array                    0     -         
           lock_queue         array                    0     -         
           num_last_reqs      integral                 32    'd1       
@@ -570,7 +507,7 @@ UVM_INFO ../sv/yapp_tx_monitor.sv(60) @ 3100: uvm_test_top.tb.yapp.tx_agent.moni
 ----------------------------------------------------
 Name            Type               Size  Value      
 ----------------------------------------------------
-pkt             short_yapp_packet  -     @3742      
+pkt             short_yapp_packet  -     @3743      
   addr          integral           2     'h0        
   length        integral           6     'ha        
   payload       da(integral)       10    -          
@@ -595,7 +532,7 @@ UVM_INFO ../sv/yapp_tx_monitor.sv(60) @ 4900: uvm_test_top.tb.yapp.tx_agent.moni
 ---------------------------------------------------
 Name            Type               Size  Value     
 ---------------------------------------------------
-pkt             short_yapp_packet  -     @3853     
+pkt             short_yapp_packet  -     @3854     
   addr          integral           2     'h1       
   length        integral           6     'hb       
   payload       da(integral)       11    -         
@@ -621,7 +558,7 @@ UVM_INFO ../sv/yapp_tx_monitor.sv(60) @ 7600: uvm_test_top.tb.yapp.tx_agent.moni
 ---------------------------------------------------
 Name            Type               Size  Value     
 ---------------------------------------------------
-pkt             short_yapp_packet  -     @3880     
+pkt             short_yapp_packet  -     @3881     
   addr          integral           2     'h2       
   length        integral           6     'h6       
   payload       da(integral)       6     -         
@@ -677,4 +614,4 @@ UVM_FATAL :    0
 Simulation complete via $finish(1) at time 965 NS + 46
 /opt/coe/cadence/XCELIUM/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 xcelium> exit
-TOOL:	xrun(64)	22.03-s012: Exiting on May 25, 2026 at 22:10:44 CDT  (total: 00:00:05)
+TOOL:	xrun(64)	22.03-s012: Exiting on May 25, 2026 at 22:25:30 CDT  (total: 00:00:03)

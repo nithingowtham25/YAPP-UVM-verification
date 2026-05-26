@@ -229,6 +229,55 @@ The issue was resolved by removing the address constraint inside `short_yapp_pac
 
 ---
 
+## 🧪 Lab 6: Virtual Interface Integration (Completed)
+
+This lab introduces virtual interface integration in UVM, enabling communication between class-based verification components and DUT-level SystemVerilog interfaces.
+
+### Key Features
+
+* Integrated SystemVerilog interfaces with the YAPP DUT
+* Added virtual interface handles inside UVM components
+* Passed interface handles using `uvm_config_db`
+* Updated driver to perform DUT signal-level communication
+* Updated monitor to observe interface-level activity
+
+### Components Updated
+
+* `yapp_if`
+* `yapp_tx_driver`
+* `yapp_tx_monitor`
+* `hw_top`
+
+### Virtual Interface Configuration
+
+Configured the virtual interface using:
+
+```systemverilog
+uvm_config_db #(virtual yapp_if)::set(
+  null,
+  "*",
+  "vif",
+  yapp_if_inst
+);
+```
+
+### Execution Flow
+
+```text
+Sequence → Sequencer → Driver → Virtual Interface → DUT
+                                      ↓
+                                 Monitor observes signals
+```
+
+### Key Concepts
+
+* Interfaces simplify DUT signal connectivity
+* Virtual interfaces bridge RTL and class-based UVM components
+* Config DB distributes interface handles across hierarchy
+* Drivers and monitors now interact with real DUT signals
+
+---
+
 ## 🧠 UVM Conceptual Analogy
 
 | UVM Component | Real-World Analogy |
@@ -268,7 +317,7 @@ The environment follows a modular UVM architecture:
 * [x] YAPP UVC (driver, monitor, agent) (Lab 3)
 * [x] Factory-based configuration (Lab 4)
 * [x] Sequence library and stimulus generation (Lab 5)
-* [ ] Virtual interface integration (Lab 6)
+* [x] Virtual interface integration (Lab 6)
 * [ ] Multi-UVC system integration (Lab 7)
 * [ ] Virtual sequences (Lab 8)
 * [ ] Scoreboard and TLM analysis (Lab 9)

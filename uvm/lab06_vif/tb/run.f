@@ -26,7 +26,8 @@ clkgen.sv
 // top module for UVM test environment
 tb_top.sv
 // accelerated top module for interface instance
-hw_top.sv
+// hw_top_no_dut.sv     // This top is developed with customized DUT for testing
+hw_top_dut.sv           // This has the original YAPP router DUT
 
 // simulation paramters
 // +UVM_TESTNAME=base_test
@@ -40,3 +41,6 @@ hw_top.sv
 
 // default timescale
 -timescale 1ns/1ns
+
+// router RTL
+../../router_rtl/yapp_router.sv
